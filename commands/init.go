@@ -38,6 +38,7 @@ func Init(opts []string) {
 
 	fmt.Println("\n\n⏳ Instalando dependências...")
 	cmd := exec.Command("bash", "-c", "cd "+opts[0]+" && "+"yarn")
-	cmd.Run()
+	err := cmd.Run()
+	fmt.Println(err)
 	fmt.Println("\n\n✅ Projeto criado com sucesso!")
 }
