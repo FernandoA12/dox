@@ -15,5 +15,5 @@ type File struct {
 func CreateFile(data File) {
 	fmt.Println("\n👱 Gerando arquivo: " + data.FileName + "...\n\n")
 
-	utils.CreateFileFromTemplate("./templates"+data.TemplatePath, data.BasePath+"/"+data.FileName, data.Opts)
+	utils.CreateFileFromTemplate("/templates"+data.TemplatePath, data.BasePath+"/"+data.FileName, data.Opts)
 }

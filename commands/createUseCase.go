@@ -50,12 +50,12 @@ func createUseCase(filename string, usecase string, withDTO bool) {
 	}
 
 	utils.CreateFolder("./src/useCases/" + filename + "/" + usecase + filename)
-	utils.CreateFileFromTemplate("./templates/UseCaseExample/"+usecase+"UseCaseExample/"+usecase+"UseCaseExampleController.ts", createFilePath(filename, usecase, "Controller"), opts)
+	utils.CreateFileFromTemplate("/templates/UseCaseExample/"+usecase+"UseCaseExample/"+usecase+"UseCaseExampleController.ts", createFilePath(filename, usecase, "Controller"), opts)
 	if withDTO {
-		utils.CreateFileFromTemplate("./templates/UseCaseExample/"+usecase+"UseCaseExample/"+usecase+"UseCaseExampleDTO.ts", createFilePath(filename, usecase, "DTO"), opts)
+		utils.CreateFileFromTemplate("/templates/UseCaseExample/"+usecase+"UseCaseExample/"+usecase+"UseCaseExampleDTO.ts", createFilePath(filename, usecase, "DTO"), opts)
 	}
-	utils.CreateFileFromTemplate("./templates/UseCaseExample/"+usecase+"UseCaseExample/"+usecase+"UseCaseExampleUseCase.ts", createFilePath(filename, usecase, "UseCase"), opts)
-	utils.CreateFileFromTemplate("./templates/UseCaseExample/"+usecase+"UseCaseExample/index.ts", createFilePath(filename, usecase, "index"), opts)
+	utils.CreateFileFromTemplate("/templates/UseCaseExample/"+usecase+"UseCaseExample/"+usecase+"UseCaseExampleUseCase.ts", createFilePath(filename, usecase, "UseCase"), opts)
+	utils.CreateFileFromTemplate("/templates/UseCaseExample/"+usecase+"UseCaseExample/index.ts", createFilePath(filename, usecase, "index"), opts)
 }
 
 func createFilePath(filename string, usecase string, typefile string) string {

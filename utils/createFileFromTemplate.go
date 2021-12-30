@@ -7,7 +7,8 @@ import (
 )
 
 func CreateFileFromTemplate(templatePath string, filePath string, data interface{}) {
-	t, _ := template.ParseFiles(templatePath)
+	home, _ := os.UserHomeDir()
+	t, _ := template.ParseFiles(home + "/.scripts/" + templatePath)
 	f, _ := os.Create(filePath)
 
 	t.Execute(f, data)
