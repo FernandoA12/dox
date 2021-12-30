@@ -21,6 +21,7 @@ func main() {
 	if len(opts) > 0 {
 		optsFile = map[string]string{
 			"Name": strings.Title(opts[0]),
+			"name": strings.ToLower(opts[0]),
 		}
 	}
 
