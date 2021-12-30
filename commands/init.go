@@ -35,10 +35,13 @@ func Init(opts []string) {
 	utils.CreateFileFromTemplate("/templates/init/multer.ts", basePath+"/src/config/multer.ts", nil)
 	utils.CreateFileFromTemplate("/templates/init/server.ts", basePath+"/src/config/server.ts", nil)
 	utils.CreateFileFromTemplate("/templates/init/index.routes.ts", basePath+"/src/routes/index.routes.ts", nil)
+	utils.CreateFileFromTemplate("/templates/init/tsconfig.json", basePath+"/tsconfig.json", nil)
 
 	fmt.Println("\n\n⏳ Instalando dependências...")
 	cmd := exec.Command("bash", "-c", "cd "+opts[0]+" && "+"yarn")
 	err := cmd.Run()
-	fmt.Println(err)
+	if err != nil {
+		fmt.Println(err)
+	}
 	fmt.Println("\n\n✅ Projeto criado com sucesso!")
 }
