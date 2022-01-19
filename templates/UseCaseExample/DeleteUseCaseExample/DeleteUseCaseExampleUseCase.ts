@@ -9,7 +9,7 @@ export class Delete{{.Name}}UseCase implements IDelete{{.Name}}UseCase {
   constructor (private {{.Name}}sRepository: I{{.Name}}sRepository) {}
 
   async execute (data: IDelete{{.Name}}DTO) {
-    const response = await this.{{.Name}}sRepository.delete(data)
+    const response = await this.{{.Name}}sRepository.delete(data._id)
     if (!response) {
       throw new Error('Houve um erro ao tentar remover o registro! Tente novamente mais tarde!')
     }
